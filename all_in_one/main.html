@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="/all_in_one/css/main.css" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>전라북도교육청 이력 및 지도실적</title>
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+    <!-- JavaScript Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body id="body">
+    <div class="top-bar">
+      <div class="top-bar__column">
+        <a href="#">
+          <img
+            class="top-bar__logo"
+            src="http://jbe.headit.kr/img/logo.png"
+            alt="logo"
+          />
+        </a>
+      </div>
+      <div>
+        <h4 class="top-bar__file">파일전송</h4>
+      </div>
+    </div>
+
+    <header class="header-title">
+      <h3 class="header-title__text">
+        전라북도교육청 학교운동부지도자 이력 및 지도실적
+      </h3>
+    </header>
+
+    <div class="main-screen">
+      <div class="container">
+        <div class="main-screen__container">
+          <div class="main-screen__row">
+            <form class="" id="leaderData">
+              <!--1.일반현황-->
+              <div class="main-screen__first-row">
+                <h4 class="main-screen__font-weight">
+                  1. 일반 현황(2022년 1월 1일 기준)
+                  <small class="text-red"> *필수</small>
+                </h4>
+                <hr class="box-hr-main" />
+                <div class="row" id="info">
+                  <div class="col-lg-3 col-md-3 col-sm-3">
+                    <div class="img-thumbnail box-thumbnail">
+                      <img
+                        class="img-responsive"
+                        id="img"
+                        src="http://jbe.headit.kr/img/No_image.png"
+                        style="width: 273px; height: 190px"
+                      />
+                      <input
+                        class="form-control"
+                        type="file"
+                        id="LeaderImg"
+                        accept="image/*"
+                        style="height: 38px"
+                      />
+                      <input
+                        type="hidden"
+                        class="form-control"
+                        id="Img"
+                        name="LeaderImg"
+                      />
+                    </div>
+                    <small class="text-red">
+                      *파일 크기는 4MB 이하로 등록해주세요.</small
+                    >
+                  </div>
+                  <div class="col-lg-9 col-md-9 col-sm-9">
+                    <div class="row">
+                      <div class="col-lg-6">
+                        <div class="form-group">
+                          <label>식별코드</label>
+                          <div class="input-group">
+                            <input
+                              type="text"
+                              class="form-control valid"
+                              placeholder="식별코드를 선택해주세요."
+                              id="No"
+                              name="No"
+                              readonly
+                              aria-invalid="false"
+                            />
+                            <span class="input-group-btn">
+                              <input
+                                type="button"
+                                class="btn valid"
+                                value="식별코드검색"
+                                style="color: white"
+                                data-toggle="modal"
+                                data-target="modal-code"
+                                aria-invalid="false"
+                              />
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-lg-6">
+                        <label class="form-group">학교명</label>
+                        <div class="input-group">
+                          <input
+                            type="text"
+                            class="form-control"
+                            placeholder="학교명을 선택해주세요."
+                            id="schoolName"
+                            name="schoolName"
+                            readonly=""
+                          />
+                          <input type="hidden" name="SchoolNo" />
+                          <span class="input-group-btn">
+                            <input
+                              type="button"
+                              class="btn"
+                              id="schoolNameBtn"
+                              data-target="#schoolList"
+                              data-toggle="modal"
+                              value="학교 검색"
+                              style="color: white"
+                            />
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                    <br />
+                    <br />
+                    <div class="row">
+                      <div class="col-lg-4">
+                        <div class="form-group">
+                          <label>성명</label>
+                          <input
+                            class="form-control"
+                            name="LeaderName"
+                            type="text"
+                            value=""
+                            placeholder="이름을 입력하세요."
+                          />
+                        </div>
+                      </div>
+                      <div class="col-lg-4">
+                        <div class="form-group">
+                          <label>생년월일</label>
+                          <input
+                            class="form-control datepicker"
+                            type="date"
+                            id="BirthDay"
+                            name="BirthDay"
+                            placeholder="1900-01-01"
+                          />
+                        </div>
+                      </div>
+                      <div class="col-lg-4">
+                        <div class="form-group">
+                          <label class="m-b-1">성별</label><br />
+                          <input
+                            class="checks small"
+                            type="radio"
+                            name="Gender"
+                            value="MAN"
+                          />
+                          <span style="margin-right: 10px; font-size: larger">
+                            남자</span
+                          >
+                          <input
+                            class="checks small"
+                            type="radio"
+                            name="Gender"
+                            value="WOMAN"
+                          />
+                          <span style="margin-right: 10px; font-size: larger"
+                            >여자</span
+                          >
+                        </div>
+                      </div>
+                    </div>
+                    <br />
+                    <br />
+                    <div class="row">
+                      <div class="col-lg-4">
+                        <div class="form-group">
+                          <label>종목</label>
+                          <select
+                            class="form-control"
+                            id="infoSportsNo"
+                            name="SportsNo"
+                          >
+                            <option value="">종목을 선택하세요.</option>
+                            <option value="CN0001">검도</option>
+                            <option value="CN0002">근대3종</option>
+                            <option value="CN0003">근대5종</option>
+                            <option value="CN0004">기계체조</option>
+                            <option value="CN0005">농구</option>
+                            <option value="CN0006">도약</option>
+                            <option value="CN0007">럭비</option>
+                            <option value="CN0008">레슬링</option>
+                            <option value="CN0009">롤러</option>
+                            <option value="CN0000">미등록사용자</option>
+                            <option value="CN0043">바둑</option>
+                          </select>
+                          <input
+                            class="form-control"
+                            type="hidden"
+                            id="hidSportsNo"
+                            name="hidSportsNo"
+                            value=""
+                          />
+                        </div>
+                      </div>
+                      <div class="col-lg-4">
+                        <div class="form-group">
+                          <label>근무지 전화번호</label>
+                          <input
+                            class="form-control"
+                            type="tel"
+                            name="TelNo"
+                            value=""
+                            placeholder="ex) 063-111-1111"
+                          />
+                        </div>
+                      </div>
+
+                      <div class="col-lg-4">
+                        <div class="form-group">
+                          <label>최초채용일</label>
+                          <input
+                            class="form-control hasDatepicker"
+                            type="date"
+                            id="EmpDT"
+                            name="EmpDT"
+                            placeholder="1900-01-01"
+                          />
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-lg-8"></div>
+                      <div class="col-lg-4">
+                        <p class="row-text">
+                          최초 채용일은
+                          <strong class="text-red"
+                            >전라북도교육청 소속 최초 채용일</strong
+                          >을 입력하세요.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!--/.일반현황-->
+
+              <!--근무이력-->
+              <br />
+              <div class="main-screen__second-row">
+                <h4 class="main-screen__font-weight">
+                  2. 근무이력(전라북도교육청 소속 - 최초 채용일부터)
+                  <small class="text-red"> *필수</small><br />
+                  <small class="text-red">
+                    * 현재 근무 중인 경우 근무 종료일을 입력하지
+                    마십시오.</small
+                  >
+                </h4>
+                <hr class="box-hr-main" />
+                <div class="col-lg-12 m-b-3">
+                  <div class="row">
+                    <div class="table-responsive">
+                      <table class="table" id="his_table">
+                        <thead>
+                          <tr class="table-header">
+                            <th class="tb-w-30" scope="col">근무기관</th>
+                            <th class="tb-w-25">근무시작일</th>
+                            <th class="tb-w-25">근무종료일</th>
+                            <th class="tb-w-30" scope="col">종목</th>
+                          </tr>
+                        </thead>
+                        <tbody id="LeaderWorkingExperience">
+                          <tr>
+                            <td>
+                              <input
+                                class="form-control"
+                                type="text"
+                                id="HisSchoolName"
+                                name="SchoolNameHis"
+                              />
+                            </td>
+                            <td>
+                              <input
+                                class="form-control hasDatepicker"
+                                type="date"
+                                id="HisStartDate"
+                                name="HisStartDT"
+                                placeholder="2022-10-19"
+                              />
+                            </td>
+                            <td>
+                              <input
+                                class="form-control hasDatepicker"
+                                type="date"
+                                id="HisEndDate"
+                                name="HisEndDT"
+                                placeholder="2022-10-19"
+                              />
+                            </td>
+                            <td>
+                              <select
+                                class="form-control"
+                                id="HisSportsNo"
+                                name="SportsNo"
+                              >
+                                <option value="ClubNameNull">
+                                  종목을 선택해주세요.
+                                </option>
+                                <option value="CN0001">검도</option>
+                                <option value="CN0002">근대3종</option>
+                                <option value="CN0003">근대5종</option>
+                                <option value="CN0004">기계체조</option>
+                                <option value="CN0005">농구</option>
+                                <option value="CN0006">도약</option>
+                                <option value="CN0007">럭비</option>
+                                <option value="CN0008">레슬링</option>
+                                <option value="CN0009">롤러</option>
+                                <option value="CN0000">미등록사용자</option>
+                                <option value="CN0043">바둑</option>
+                              </select>
+                            </td>
+                            <td>
+                              <input
+                                id="add1"
+                                type="button"
+                                class="two-content add-btn btn btn-primary"
+                                value="추가"
+                              />
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--/.근무이력-->
+
+              <!--자격사항-->
+              <br /><br /><br />
+              <div class="row">
+                <h4 class="main-screen__font-weight">
+                  3. 자격사항
+                  <small class="text-red"> * 필수</small>
+                </h4>
+                <hr class="box-hr-main" />
+                <div class="col-lg-20 m-b-3">
+                  <div class="row">
+                    <div class="table-responsive">
+                      <table class="table" id="certificate_table">
+                        <thead>
+                          <tr class="table-header">
+                            <th class="tb-w-30" scope="col">자격/면허</th>
+                            <th class="tb-w-25">자격번호</th>
+                            <th class="tb-w-25">취득일자</th>
+                            <th class="tb-w-25" scope="col">발급기관</th>
+                          </tr>
+                        </thead>
+                        <tbody id="LeaderCertificate">
+                          <tr>
+                            <td>
+                              <!--<input class="form-control" type="text" id="licenseName" name="CertificateName" />-->
+
+                              <select
+                                class="form-group form-control valid"
+                                name="CertificateName"
+                                id="licenseName"
+                              >
+                                <option value="Null">선택하세요.</option>
+                                <option value="1급 전문스포츠지도사">
+                                  1급 전문스포츠지도사
+                                </option>
+                                <option value="2급 전문스포츠지도사">
+                                  2급 전문스포츠지도사
+                                </option>
+                              </select>
+                            </td>
+                            <td>
+                              <input
+                                class="form-control"
+                                type="text"
+                                id="licenseNumber"
+                                name="CertificateNumber"
+                              />
+                            </td>
+                            <td>
+                              <input
+                                class="form-control hasDatepicker"
+                                type="date"
+                                name="CertificateDT"
+                                placeholder="2022-10-19"
+                              />
+                            </td>
+                            <td>
+                              <!-- <input class="form-control" type="text" id="licenseOrgan" name="Organization">-->
+                              <select
+                                class="form-control valid"
+                                name="Organization"
+                                id="licenseOrgan"
+                              >
+                                <option value="Null">선택하세요.</option>
+                                <option value="문화체육관광부장관">
+                                  문화체육관광부장관
+                                </option>
+                              </select>
+                            </td>
+                            <td>
+                              <input
+                                id="add2"
+                                type="button"
+                                class="two-content btn add-btn btn-primary"
+                                value="추가"
+                              />
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--/.자격사항-->
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.6.1.js"
+      integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+      crossorigin="anonymous"
+    ></script>
+    <script type="text/javascript" src="/all_in_one/js/add.js"></script>
+    <script type="text/javascript" src="/all_in_one/js/add2.js"></script>
+    <script type="text/javascript" src="/all_in_one/js/delete.js"></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

@@ -1,0 +1,101 @@
+#body {
+  background-color: rgba(0, 0, 0, 0.1);
+  margin: 0;
+  padding: 0;
+}
+.top-bar {
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding-bottom: 15px;
+}
+.top-bar__column {
+  width: 67.5%;
+}
+.top-bar__logo {
+  margin-top: 6px;
+}
+.top-bar__file {
+  font-size: 15px;
+  margin-top: 20px;
+  font-weight: 900;
+}
+.header-title {
+  background-color: white;
+  padding-top: 30px;
+  padding-bottom: 20px;
+}
+.header-title__text {
+  text-align: center;
+  font-weight: 900;
+}
+
+.main-screen {
+  margin: 2.5% 15%;
+  padding: 70px 50px;
+  background-color: white;
+}
+.box-hr-main {
+  border: 1px solid #238af9;
+  width: 100%;
+}
+.main-screen__font-weight {
+  font-weight: 900;
+}
+.text-red {
+  color: red;
+  font-size: 12px;
+  font-weight: 300;
+}
+.row-text {
+  font-size: 12px;
+}
+
+.table-header {
+  text-align: center;
+  width: 100%;
+}
+.form-group {
+  font-weight: bolder;
+}
+.table > thead > tr > th {
+  vertical-align: bottom;
+  border-bottom: 2px solid #ddd;
+}
+.form-control {
+  display: block;
+  width: 100%;
+  height: 34px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #555;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  height: 42px;
+}
+
+.checks {
+  width: 15px;
+  height: 15px;
+  margin-top: 10px;
+}
+
+.input-group-btn {
+  padding-top: 3px;
+  background-color: #337ab7;
+  border-color: #2e6da4;
+  border-radius: 0px 5px 5px;
+}
+
+.add-btn {
+  border-radius: 0px;
+}
+#add1,
+#add2 {
+  margin-top: 3px;
+  border-radius: 0%;
+}
